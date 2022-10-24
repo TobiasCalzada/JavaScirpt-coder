@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    margin: 0px;
+    background-color: black;
+}
+
+/*navbar*/
+.navbarContainer{
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    background-color: #2d2d2d;
+}
+
+.navarLogo{
+    justify-self: start;
+    margin-left: 20px;
+    color: #fff;
+    margin-top:1vh;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+}
+
+.carrito{
+    font-size: 25px;
+    margin-top: 1vh;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.carritoLogo{
+    color: whitesmoke;
+    text-shadow: 2px 2px  rgb(63, 61, 61);
+    transition: 1s;
+}
+.carritoLogo:hover{
+    text-shadow: 5px 3px  rgb(4, 4, 4);
+}
+
+/*banner estilos*/
+.banner{
+    background-size: cover;
+    background-position: center;
+    height: 110vh;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url(https://images.alphacoders.com/692/692039.jpg);
+}
+
+.bannerContainer{
+    text-align: center;
+    padding:15% 0;
+}
+
+.banner h1{
+    margin: 0;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    font-size: 62px;
+    font-weight: bold;
+}
+
+.banner p{
+    font-size: 30px;
+    color: whitesmoke;
+    opacity: 0.7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/*productsos card*/
+.tiendaContenido {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 7px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 0px 0px 10px 10px;
+    max-width: 260px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: arial;
+    background-color: #060505;
+}
+
+.card > img {
+    width: 100%;
+    height:260px;
+}
+
+.tituloDeCards{
+    font-size: 25px;
+    color: whitesmoke;
+    padding: 10px 10px 0px 10px;
+}
+
+.precio { 
+    color:whitesmoke;
+    font-size: 22px;
+}
+
+.card button {
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.card button:hover {
+   background-color: rgb(112, 110, 110);
+}
+
+
+/*modal estilos*/
+.modalContenedor{
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+}
+
+.modalContenedor::-webkit-scrollbar {
+    display: none;
+}
+
+.modalHeader{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.modalHeaderTitle{
+    justify-self: start;
+}
+
+.modalHeaderboton{
+    cursor: pointer;
+}
+
+.modalContenedor > .modalContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.modalContenedor > div > img {
+    height: 120px;
+    width: 120px;
+}
+
+.totalcompra {
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.eliminaProducto{
+    background-color: rgb(233, 43, 43);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*carrito estilo contador*/
+.cantidadDelCarrito{
+    background-color: rgb(112, 129, 129);
+    color: whitesmoke;
+    border-radius: 60%;
+    font-size: 10px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+/*botones suma resta cantidad*/
+.restar{
+    cursor: pointer;
+}
+
+.sumar{
+    cursor: pointer; 
+}
+
+/*fondo de cards*/
+.fondoDeCards{
+    background-size: cover;
+    background-position: center;
+    height: 150vh;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url(https://img.freepik.com/foto-gratis/texturas-hierba-verde_74190-5443.jpg?w=2000);
+}
