@@ -115,11 +115,8 @@ const carritoCounter = () =>{
   
   cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritolength"));
 
-  if(carrito.length != 0){
-    cantidadCarrito.style.display = "block";
-  }else{
-    cantidadCarrito.style.display = "none";
-  }
+  carrito.length != 0 ?    cantidadCarrito.style.display = "block" :    cantidadCarrito.style.display = "none";
+
 }
 
 carritoCounter();

@@ -58,8 +58,9 @@ productos.forEach((product) => {
         nombre: product.nombre,
         precio: product.precio,
         cantidad: product.cantidad,
-      });
-    };
+      });};
+
+      
       console.log(carrito);
       console.log(carrito.length);
       carritoCounter();
