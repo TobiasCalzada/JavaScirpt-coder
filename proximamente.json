@@ -1,0 +1,25 @@
+[
+    {
+        "id":9,
+        "nombreProximamente": "Sogas de boxeo",
+        "imgProximamente" : "imagenes/soga.jpg",
+        "precior": 700,
+        "stockr":"Proximamente"
+    },
+
+    {
+        "id":10,
+        "nombreProximamente": "Banco press plano",
+        "imgProximamente" : "imagenes/banco.jpg",
+        "precior": 1900,
+        "stockr":"Proximamente"
+    },
+
+    {
+        "id":11,
+        "nombreProximamente": "Barra de acero",
+        "imgProximamente" : "imagenes/barra.jpg",
+        "precior": 8500,
+        "stockr":"Proximamente"
+    }
+]

@@ -6,6 +6,7 @@ const productos = [
         precio: 50,
         img : "imagenes/pesa-1.25kg.jpg",
         cantidad: 1,
+        stock:10,
     },
     {
         id: 2,
@@ -13,6 +14,7 @@ const productos = [
         precio: 150,
         img : "imagenes/pesa-5kg.jpg",
         cantidad: 1,
+        stock:15,
     },
     {
         id: 3,
@@ -20,6 +22,7 @@ const productos = [
         precio: 220,
         img : "imagenes/pesa-10kg.jpg",
         cantidad: 1,
+        stock:6,
     },
     {
         id: 4,
@@ -27,6 +30,7 @@ const productos = [
         precio: 560,
         img : "imagenes/pesa-20kg.jpg",
         cantidad: 1,
+        stock:30,
     },
     {
         id: 5,
@@ -34,6 +38,7 @@ const productos = [
         precio: 500,
         img : "imagenes/manc-5kg.jpg",
         cantidad: 1,
+        stock:4,
     },
     {
         id: 6,
@@ -41,6 +46,7 @@ const productos = [
         precio: 800,
         img : "imagenes/manc-10kg.jpg",
         cantidad: 1,
+        stock:40,
     },
     {
         id: 7,
@@ -48,6 +54,7 @@ const productos = [
         precio: 950,
         img : "imagenes/manc-15kg.jpg",
         cantidad: 1,
+        stock:10,
     },
     {
         id: 8,
@@ -55,5 +62,6 @@ const productos = [
         precio: 1200,
         img : "imagenes/manc-25kg.jpg",
         cantidad: 1,
+        stock:12,
     },
 ];

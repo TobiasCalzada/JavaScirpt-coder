@@ -8,12 +8,12 @@
 body{
     margin: 0px;
     background-color: black;
-}
+    height: 1200px}
 
 /*navbar*/
 .navbarContainer{
     position: sticky;
-    z-index: 3;
+    z-index: 5;
     top: 0;
 }
 
@@ -21,7 +21,7 @@ body{
     display: flex;
     justify-content: space-between;
     height: 10vh;
-    background-color: #2d2d2d;
+    background: linear-gradient(rgb(62, 61, 61), rgb(35, 35, 35));
 }
 
 .navarLogo{
@@ -39,16 +39,36 @@ body{
     font-size: 25px;
     margin-top: 1vh;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .carritoLogo{
-    color: whitesmoke;
+    color: rgb(241, 240, 240);
     text-shadow: 2px 2px  rgb(63, 61, 61);
     transition: 1s;
 }
 .carritoLogo:hover{
     text-shadow: 5px 3px  rgb(4, 4, 4);
+    scale: 1.2;
+}
+
+/*carrito estilo contador*/
+.cantidadDelCarrito{
+    background:  linear-gradient(rgba(150, 149, 149, 0.917), rgba(96, 95, 95, 0.937));;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    top: 40px;
+    padding-top: 1.5px;
+    padding-right: 1px;
+    right: 22px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
 }
 
 /*banner estilos*/
@@ -67,17 +87,17 @@ body{
 
 .banner h1{
     margin: 0;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    font-size: 62px;
+    font-size: 69px;
     font-weight: bold;
 }
 
 .banner p{
     font-size: 30px;
-    color: whitesmoke;
+    color: rgb(195, 195, 195);
     opacity: 0.7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    text-shadow: 1px 2px 9px rgba(0,0,0,0.4);
 }
 
 /*productsos card*/
@@ -99,39 +119,53 @@ body{
     margin-bottom: 15px;
     text-align: center;
     font-family: arial;
-    background-color: #060505;
+    background: linear-gradient(rgb(130, 129, 129), rgb(28, 27, 27))
 }
 
 .card > img {
     width: 100%;
-    height:260px;
+    max-height:260px;
+    border: 0px solid rgba(0, 0, 0, 0);
 }
 
 .tituloDeCards{
     font-size: 25px;
     color: whitesmoke;
     padding: 10px 10px 0px 10px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .precio { 
     color:whitesmoke;
     font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    text-align: start;
+    padding: 20px 0px 0px 13px;
+}
+
+.stock{
+    color:whitesmoke;
+    font-size: 22px; 
+    font-family: 'Roboto', sans-serif;
+    text-align: start; 
+    padding: 0px 0px 5px 13px;
 }
 
 .card button {
     outline: 0;
-    padding: 12px;
+    padding: 12px 6px 12px 6px;
     color: white;
-    background-color: #000;
+    background:linear-gradient( rgb(28, 27, 27),rgb(11, 11, 11));
     text-align: center;
-    cursor: pointer;
     width: 100%;
+    cursor: pointer;
     font-size: 18px;
     border-radius: 0px 0px 10px 10px;
+    border: 1px solid  rgb(43, 42, 42);
 }
 
 .card button:hover {
-   background-color: rgb(112, 110, 110);
+    background:linear-gradient(rgb(14, 162, 247),rgb(8, 153, 237));
 }
 
 
@@ -141,13 +175,13 @@ body{
     margin: 0 10%;
     max-height: 88vh;
     color: #fff;
-    background-color: #000;
+    background: linear-gradient(rgba(16, 16, 16, 0.975),rgb(55, 55, 56));
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
     overflow: auto;
-    z-index: 9;
+    z-index: 12;
     top: 12vh;
     scrollbar-color: none;
 }
@@ -158,18 +192,24 @@ body{
 
 .modalHeader{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
-    background-color: black;
-    color: whitesmoke;
+    background-color: rgba(41, 40, 40, 0.928);
+    color: rgb(0, 0, 0);
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .modalHeaderTitle{
     justify-self: start;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .modalHeaderboton{
     cursor: pointer;
+    color: rgb(255, 255, 255);
+    margin-right: 20px;
+    padding-top: 10px;
 }
 
 .modalContenedor > .modalContent {
@@ -177,13 +217,22 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 90%;
     margin: 10px;
 }
 
 .modalContenedor > div > img {
     height: 120px;
     width: 120px;
+    border-radius: 10%;
+}
+
+.cantidadModal{
+    padding-top: 10px;
+}
+
+.precioModal{
+    padding-top: 19px;
 }
 
 .totalcompra {
@@ -193,29 +242,16 @@ body{
     padding-top: 20px;
 }
 
-
 .eliminaProducto{
     background-color: rgb(233, 43, 43);
     border-radius: 50%;
     cursor: pointer;
 }
 
-/*carrito estilo contador*/
-.cantidadDelCarrito{
-    background-color: rgb(112, 129, 129);
-    color: whitesmoke;
-    border-radius: 60%;
-    font-size: 10px;
-    padding: 4px;
-    top: 37px;
-    right: 14px;
-    position: absolute;
-    display: none;
-}
-
 /*botones suma resta cantidad*/
 .restar{
     cursor: pointer;
+    padding-top: 1px;
 }
 
 .sumar{
@@ -226,7 +262,27 @@ body{
 .fondoDeCards{
     background-size: cover;
     background-position: center;
-    height: 150vh;
+    height: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url(https://img.freepik.com/foto-gratis/texturas-hierba-verde_74190-5443.jpg?w=2000);
 }
+
+/*estilos proximamente cards*/
+.cardDeProximamente{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.914);
+    border-radius: 0px 0px 10px 10px;
+    max-width: 260px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: arial;
+    background: linear-gradient(rgb(81, 81, 81), rgb(30, 30, 30)) 
+}
+
+.cardDeProximamente > img {
+    width: 100%;
+    height:260px;
+    opacity: 0.6;
+}
+

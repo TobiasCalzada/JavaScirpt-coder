@@ -23,13 +23,14 @@ carrito.forEach((product) =>{
     let carritoContent = document.createElement("div");
     carritoContent.className = "modalContent";
     carritoContent.innerHTML = `
-        <img src="${product.img}"
+        <img class="imagenModal" src="${product.img}"
         <h3>${product.nombre}</h3>
-        <p>${product.precio} $<p>
+        <p class="precioModal">${product.precio} $</p>
         <span class="restar"> - </span>
-        <p>Cantidad: ${product.cantidad}</p>
+        <p class="cantidadModal">Cantidad: ${product.cantidad}</p>
         <span class="sumar"> + </span>
         <p>Total: ${product.cantidad * product.precio}</p>
+        <span class="eliminaProducto"> ✖ </span>
     `;
 
     modalcontainer.append(carritoContent);
@@ -51,15 +52,34 @@ carrito.forEach((product) =>{
       pintarcarrito();
     });
 
-
-    let eliminar = document.createElement("span");
-    eliminar.innerText = "✖";
-    eliminar.className = "eliminaProducto";
-    carritoContent.append(eliminar);
-
-    eliminar.addEventListener("click",eliminarProducto)
+    let eliminar = carritoContent.querySelector(".eliminaProducto")
+    
+    eliminar.addEventListener("click", () =>{
+      Swal.fire({
+        title: 'Esta seguro de eliminar el producto?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#3F3F3F',
+        confirmButtonText: 'Eliminar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Eliminado',
+            'El producto se elimino correctamente.',
+            'success',
+          )
+          eliminarProducto(product.id);
+        }
+      });
+      
+    });
+    
+    eliminar.addEventListener("click",eliminarProducto);
   });
 
+
+  
   const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
   const totalcompra = document.createElement("div");
@@ -69,17 +89,16 @@ carrito.forEach((product) =>{
   modalcontainer.append(totalcompra);
 };
 
-
-
 verCarrito.addEventListener("click" , pintarcarrito);
 
 //eliminar productos funcion
-const eliminarProducto = () => {
-  const foundId = carrito.find((element) => element.id);
+const eliminarProducto = (id) => {
+  const foundId = carrito.find((element) => element.id === id);
 
   carrito = carrito.filter((carritoid) => {
     return carritoid !== foundId;
   });
+
   carritoCounter();
   guardadoLocal();
   pintarcarrito();
@@ -89,13 +108,18 @@ const eliminarProducto = () => {
 
 //funcion conttador carrito icono
 const carritoCounter = () =>{
-  cantidadCarrito.style.display = "block";
 
   const carritolength = carrito.length;
 
   localStorage.setItem("carritolength", JSON.stringify(carritolength));
   
   cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritolength"));
+
+  if(carrito.length != 0){
+    cantidadCarrito.style.display = "block";
+  }else{
+    cantidadCarrito.style.display = "none";
+  }
 }
 
 carritoCounter();
